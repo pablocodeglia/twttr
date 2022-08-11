@@ -1,0 +1,35 @@
+{% extends "network/layout.html" %}
+
+{% block title %}{{user_profile.username|title}}'s Profile{% endblock %}
+
+{% block body %}
+
+    <div class="profile-container">
+            <h1>
+                {{user_profile.username|title}}
+
+            </h1>
+            {% if user != user_profile  %}
+                <p>
+                {% if is_following  %}
+                    <button type="button" id="follow-btn" class="btn btn-outline-primary btn-sm" name="{{user_profile.id}}">
+                        <i class="bi bi-person-dash-fill"></i> Unfollow
+                    </button>
+                {% else %}
+                    <button type="button" id="follow-btn" class="btn btn-outline-primary btn-sm" name="{{user_profile.id}}">
+                        <i class="bi bi-person-plus-fill"></i> Follow
+                    </button>
+                {% endif %}
+                </p>
+            {% endif %}
+                <h6>
+                <strong>Following:</strong> {{following_count}} 
+            </h6>
+            <h6>
+                <strong>Followers:</strong> <span id="followers_count">{{followers_count}}</span>
+            </h6>
+
+    </div>
+
+{% include 'network/posts.html' %}
+{% endblock %}

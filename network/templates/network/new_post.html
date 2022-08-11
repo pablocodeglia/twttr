@@ -1,0 +1,19 @@
+{% extends "network/layout.html" %}
+{% block title %}New post{% endblock %}
+{% block body %}
+    <div class="profile-container">
+        <h1>
+            New post
+        </h1>
+    </div>
+    <div class="square-container">
+        <form method="post">
+            {% csrf_token %}
+                
+            <div>
+                {{form.body}}
+            </div>
+            <input class="btn btn-dark" type="submit" value="Post" style="margin-left: auto;">
+        </form>    
+    </div>
+{% endblock %}

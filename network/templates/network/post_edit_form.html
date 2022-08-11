@@ -1,0 +1,20 @@
+{% extends "network/layout.html" %}
+
+{% block body %}
+<div class="post-container">
+    <div class="profile-container">
+    <div class="square-container">
+        <form method="post">
+            {% csrf_token %}    
+            <div>
+                Post:
+            </div>
+            <div style="width: 100%;">
+                {{form.body}}
+            </div>
+            <input type="submit" value="Save">
+        </form>    
+    </div>
+    </div>
+</div>
+{% endblock %}
