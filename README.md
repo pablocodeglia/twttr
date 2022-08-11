@@ -26,7 +26,8 @@ Using JavaScript, you should asynchronously let the server know to update the li
 ### **Installation:**
 
 - Install project dependencies by running pip install -r requirements.txt.
-- Run the python program with command 'python main.py'.
+- Run the python program with command 'python main.py runserver'.
+- For admin console, create superuser with command 'python manage.py createsuperuser'
 - Create a user by registering, log-in.
 
 
